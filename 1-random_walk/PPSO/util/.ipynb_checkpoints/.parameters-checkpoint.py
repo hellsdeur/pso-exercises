@@ -1,0 +1,16 @@
+TARGET_WORD = [
+    52.547, 72.154, 53.694, 57.771, 115.88, 105.59, 75.368, 126.02,
+    52.756, 85.100, 80.525, 111.24, 113.62, 64.95, 89.181, 85.647,
+    101.71, 106.75, 110.37, 72.082, 104.38, 102.41, 63.009, 59.52,
+    89.869, 126.78, 77.231, 96.821, 67.905, 110.1
+]
+
+NPARTICLE = 20
+DIM = len(target_word)
+RANGE = (min(target_word), max(target_word))
+NITERATION = 500
+VMAX = (RANGE[1] - RANGE[0]) / 2.0
+C1 = 2.05
+C2 = 2.05
+WRANGE = (.4, .9)
+W = [WRANGE[1] - (WRANGE[1] - WRANGE[0]) * i / NITERATION for i in range(NITERATION)]

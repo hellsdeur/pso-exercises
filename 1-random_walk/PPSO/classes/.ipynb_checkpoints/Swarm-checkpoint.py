@@ -1,22 +1,23 @@
 from PPSO.classes.Particle import Particle
-import PPSO.util.parameters as param
 
 import math
 
 class Swarm:
        
-    def __init__(self, f, n = None):
+    def __init__(self, f, NPARTICLE, DIM, RANGE, n = None):
         if n is not None:
             self.n = n
         else:
-            self.n = param.NPARTICLE
+            self.n = NPARTICLE
         
         self.f = f
+        self.DIM = DIM
+        self.RANGE = RANGE
         self.particles = []
         
     def initialize(self):
         for i in range(self.n):
-            self.particles.insert(i, Particle(self.f))
+            self.particles.insert(i, Particle(self.f, self.DIM, self.RANGE))
     
     def avgFitness(self):
         return sum(p.fit_x for p in self.particles) / float(self.n)

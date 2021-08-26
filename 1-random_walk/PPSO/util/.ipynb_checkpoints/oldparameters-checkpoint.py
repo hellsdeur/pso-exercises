@@ -1,0 +1,11 @@
+NPARTICLE = 20
+DIM = 3
+RANGE = (-5, 5)
+NITERATION = 500
+NRUN = 5
+VMAX = (RANGE[1] - RANGE[0]) / 2.0
+
+C1 = 2.05
+C2 = 2.05
+WRANGE = (.4, .9)
+W = [WRANGE[1] - (WRANGE[1] - WRANGE[0]) * i / NITERATION for i in range(NITERATION)]
